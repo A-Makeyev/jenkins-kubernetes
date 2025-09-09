@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-docker-certs
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-kubernetes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins-kubernetes
+  template:
+    metadata:
+      labels:
+        app: jenkins-kubernetes
+    spec:
+      containers:
+        - name: jenkins-kubernetes
+          image: jenkins/jenkins:lts
+          env:
+            - name: DOCKER_HOST
+              value: tcp://jenkins-docker:2376
+            - name: DOCKER_CERT_PATH
+              value: /certs/client
+            - name: DOCKER_TLS_VERIFY
+              value: "1"
+          ports:
+            - containerPort: 8080  
+            - containerPort: 50000  
+          volumeMounts:
+            - name: jenkins-docker-certs
+              mountPath: /certs/client
+              readOnly: true
+            - name: jenkins-data
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkins-docker-certs
+          persistentVolumeClaim:
+            claimName: jenkins-docker-certs
+        - name: jenkins-data
+          persistentVolumeClaim:
+            claimName: jenkins-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-service
+spec:
+  selector:
+    app: jenkins-kubernetes
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080        
+      targetPort: 8080  
+      nodePort: 30080   

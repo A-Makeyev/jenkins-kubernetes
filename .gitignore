@@ -1,0 +1,7 @@
+# configuration/
+env/
+.venv/
+/Data/
+/pages/__pycache__/
+/tests/__pycache__/
+# configuration/
