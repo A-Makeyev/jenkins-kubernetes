@@ -2,12 +2,12 @@ pipeline {
     agent {
         docker {
             image 'python:3.12-slim'
-            args '-v /var/run/docker.sock:/var/run/docker.sock' // needed for DinD if required
+            args '-v $PWD:/app' // mount workspace inside container
         }
     }
 
     environment {
-        APP_NAME = 'my-app'
+        PYTHONUNBUFFERED = '1'
     }
 
     stages {
@@ -17,24 +17,33 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Install dependencies') {
             steps {
-                sh 'echo Building ${APP_NAME}'
-                sh 'python --version'
+                sh '''
+                    python -m pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
             }
         }
 
-        stage('Test') {
+        stage('Run Tests') {
             steps {
-                sh 'echo Running tests for ${APP_NAME}'
+                sh 'pytest --maxfail=1 --disable-warnings -v'
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+            archiveArtifacts artifacts: '**/tests/results/*.xml', allowEmptyArchive: true
+            junit '**/tests/results/*.xml'
             deleteDir()
+        }
+        success {
+            echo 'Tests passed!'
+        }
+        failure {
+            echo 'Tests failed!'
         }
     }
 }
