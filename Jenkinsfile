@@ -1,30 +1,46 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.9-slim'
-            args '-u root'
-        }
-    }
+    agent any
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("pytest-runner:${env.BUILD_ID}")
+                }
+            }
+        }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install pytest'
+                script {
+                    docker.image("pytest-runner:${env.BUILD_ID}").inside('-u root') {
+                        sh 'pip install -r requirements.txt pytest'
+                    }
+                }
             }
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest --junitxml=report.xml'
+                script {
+                    docker.image("pytest-runner:${env.BUILD_ID}").inside('-u root') {
+                        sh 'pytest --junitxml=report.xml'
+                    }
+                }
             }
         }
     }
     post {
         always {
-            junit 'report.xml'
+            script {
+                docker.image("pytest-runner:${env.BUILD_ID}").inside('-u root') {
+                    sh 'cp report.xml .'
+                }
+                junit 'report.xml'
+                sh 'docker rmi pytest-runner:${env.BUILD_ID} || true'
+            }
         }
     }
 }
