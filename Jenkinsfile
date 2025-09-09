@@ -1,37 +1,39 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.12-slim'  // lightweight Python image
-            args '-v /var/jenkins_home:/var/jenkins_home' // optional, if needed
-        }
-    }
+    agent any
+
     environment {
-        VENV = 'venv'  // virtual environment folder
+        VENV = '.venv'
     }
+
     stages {
-        stage('Setup') {
+        stage('Setup Container') {
             steps {
                 script {
-                    // Create virtual environment
-                    sh 'python -m venv $VENV'
-                    sh '''
-                        source $VENV/bin/activate
-                        pip install --upgrade pip
-                        pip install uv pytest pytest-html
-                    '''
+                    docker.image('python:3.12-slim').inside('-v /var/jenkins_home:/var/jenkins_home') {
+                        sh '''
+                            python -m venv $VENV
+                            source $VENV/bin/activate
+                            pip install --upgrade pip
+                            pip install uv pytest pytest-html
+                        '''
+                    }
                 }
             }
         }
+
         stage('Run Tests') {
             steps {
                 script {
-                    sh '''
-                        source $VENV/bin/activate
-                        uv run tests --html=report.html --self-contained-html
-                    '''
+                    docker.image('python:3.12-slim').inside('-v /var/jenkins_home:/var/jenkins_home') {
+                        sh '''
+                            source $VENV/bin/activate
+                            uv run pytest tests --html=report.html --self-contained-html
+                        '''
+                    }
                 }
             }
         }
+
         stage('Publish Report') {
             steps {
                 publishHTML([
@@ -45,6 +47,7 @@ pipeline {
             }
         }
     }
+
     post {
         always {
             archiveArtifacts artifacts: 'report.html', fingerprint: true

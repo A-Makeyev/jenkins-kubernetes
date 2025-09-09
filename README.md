@@ -52,3 +52,14 @@ kubectl delete pvc jenkins-data jenkins-docker-certs
 kubectl delete deployment jenkins-kubernetes
 kubectl delete service jenkins-service
 kubectl delete pv --all
+
+## Replace jenkins location
+Enable proxy compatibility: Manage Jenkins > Configure Global Security > CSRF > Check "Enable proxy compatibility"
+Set Jenkins URL in Manage Jenkins > Configure System > Jenkins Location to http://<your-node-ip>:30080/
+
+kubectl get nodes -o wide
+http://localhost:30080 -> http://192.168.127.2:30080
+
+
+## Quick commands
+git add . && git commit -m "Update <%DATE% %TIME:~0,8%>" && git push
