@@ -1,3 +1,6 @@
+# =========================
+# Persistent Volumes
+# =========================
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -8,24 +11,18 @@ spec:
   resources:
     requests:
       storage: 5Gi
+
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: jenkins-docker-certs
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
----
+
+# =========================
+# Jenkins Deployment
+# =========================
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: jenkins
@@ -36,51 +33,34 @@ spec:
     spec:
       containers:
         - name: jenkins
-          image: jenkins-docker:latest
+          image: amakeyev/jenkins-docker:latest
           imagePullPolicy: IfNotPresent
-          env:
-            - name: DOCKER_HOST
-              value: tcp://localhost:2376
-            - name: DOCKER_CERT_PATH
-              value: /certs/client
-            - name: DOCKER_TLS_VERIFY
-              value: "1"
           ports:
             - name: http
               containerPort: 8080
             - name: agent
               containerPort: 50000
-          volumeMounts:
-            - name: jenkins-data
-              mountPath: /var/jenkins_home
-            - name: jenkins-docker-certs
-              mountPath: /certs/client
-              readOnly: true
-
-        - name: docker-dind
-          image: docker:24-dind
-          securityContext:
-            privileged: true
           env:
-            - name: DOCKER_TLS_CERTDIR
-              value: /certs
-          ports:
-            - name: docker
-              containerPort: 2376
+            - name: DOCKER_HOST
+              value: unix:///var/run/docker.sock
           volumeMounts:
-            - name: jenkins-docker-certs
-              mountPath: /certs
             - name: jenkins-data
               mountPath: /var/jenkins_home
-
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
       volumes:
         - name: jenkins-data
           persistentVolumeClaim:
             claimName: jenkins-data
-        - name: jenkins-docker-certs
-          persistentVolumeClaim:
-            claimName: jenkins-docker-certs
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
+
 ---
+
+# =========================
+# Jenkins Service
+# =========================
 apiVersion: v1
 kind: Service
 metadata:

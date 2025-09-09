@@ -29,11 +29,11 @@ docker-compose stop
 ### Open jenkins
 http://localhost:8080
 
-
 ## Using kubernetes
 ## Installation
 docker build -t jenkins-docker .
 kubectl apply -f deployment.yml
+kubectl port-forward deployment/jenkins 8080:8080
 
 ## Verify
 kubectl get deployments
@@ -41,23 +41,18 @@ kubectl get services
 kubectl get pvc
 
 ## Open Jenkins
-http://localhost:30080
+http://localhost:8080
 
 ### Get password
 kubectl get pods
-kubectl exec -it jenkins-9585d9bb5-b5lnw -- cat /var/jenkins_home/secrets/initialAdminPassword
+kubectl exec -it jenkins-cf4445798-r88bh -- cat /var/jenkins_home/secrets/initialAdminPassword
 
 ## Delete resources
-kubectl delete deployment jenkins
-kubectl delete pv --all
-
-## Replace jenkins location
-Enable proxy compatibility: Manage Jenkins > Configure Global Security > CSRF > Check "Enable proxy compatibility"
-Set Jenkins URL in Manage Jenkins > Configure System > Jenkins Location to http://<your-node-ip>:30080/
-
-kubectl get nodes -o wide
-http://localhost:30080 -> http://192.168.127.2:30080
-
+kubectl delete statefulset jenkins --ignore-not-found
+kubectl delete deployment jenkins --ignore-not-found
+kubectl delete svc jenkins-service --ignore-not-found
+kubectl delete pvc jenkins-docker-certs --ignore-not-found
+kubectl delete pvc jenkins-data --ignore-not-found
 
 ## Quick commands
 ### Scale replicas
@@ -68,3 +63,8 @@ kubectl rollout restart deployment jenkins
 
 ### Git push
 git add . && git commit -m "Update <%DATE% %TIME:~0,8%>" && git push
+
+
+docker build -t amakeyev/jenkins-docker:latest .
+docker login
+docker push amakeyev/jenkins-docker:latest

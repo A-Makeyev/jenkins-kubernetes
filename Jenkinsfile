@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python:3.12-slim'
-            args '--user root'
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
             reuseNode true
         }
     }
@@ -41,10 +41,14 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
+            node {
+                archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
+            }
         }
         cleanup {
-            cleanWs()
+            node {
+                cleanWs()
+            }
         }
     }
 }
