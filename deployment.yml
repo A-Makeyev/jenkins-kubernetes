@@ -23,43 +23,63 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-kubernetes
+  name: jenkins
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: jenkins-kubernetes
+      app: jenkins
   template:
     metadata:
       labels:
-        app: jenkins-kubernetes
+        app: jenkins
     spec:
       containers:
-        - name: jenkins-kubernetes
-          image: jenkins/jenkins:lts
+        - name: jenkins
+          image: jenkins-docker:latest
+          imagePullPolicy: IfNotPresent
           env:
             - name: DOCKER_HOST
-              value: tcp://jenkins-docker:2376
+              value: tcp://localhost:2376
             - name: DOCKER_CERT_PATH
               value: /certs/client
             - name: DOCKER_TLS_VERIFY
               value: "1"
           ports:
-            - containerPort: 8080  
-            - containerPort: 50000  
+            - name: http
+              containerPort: 8080
+            - name: agent
+              containerPort: 50000
           volumeMounts:
+            - name: jenkins-data
+              mountPath: /var/jenkins_home
             - name: jenkins-docker-certs
               mountPath: /certs/client
               readOnly: true
+
+        - name: docker-dind
+          image: docker:24-dind
+          securityContext:
+            privileged: true
+          env:
+            - name: DOCKER_TLS_CERTDIR
+              value: /certs
+          ports:
+            - name: docker
+              containerPort: 2376
+          volumeMounts:
+            - name: jenkins-docker-certs
+              mountPath: /certs
             - name: jenkins-data
               mountPath: /var/jenkins_home
+
       volumes:
-        - name: jenkins-docker-certs
-          persistentVolumeClaim:
-            claimName: jenkins-docker-certs
         - name: jenkins-data
           persistentVolumeClaim:
             claimName: jenkins-data
+        - name: jenkins-docker-certs
+          persistentVolumeClaim:
+            claimName: jenkins-docker-certs
 ---
 apiVersion: v1
 kind: Service
@@ -67,10 +87,16 @@ metadata:
   name: jenkins-service
 spec:
   selector:
-    app: jenkins-kubernetes
+    app: jenkins
   type: NodePort
   ports:
-    - protocol: TCP
-      port: 8080        
-      targetPort: 8080  
-      nodePort: 30080   
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30080
+    - name: agent
+      protocol: TCP
+      port: 50000
+      targetPort: 50000
+      nodePort: 30050

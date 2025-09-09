@@ -31,8 +31,8 @@ http://localhost:8080
 
 
 ## Using kubernetes
-
 ## Installation
+docker build -t jenkins-docker .
 kubectl apply -f deployment.yml
 
 ## Verify
@@ -45,12 +45,10 @@ http://localhost:30080
 
 ### Get password
 kubectl get pods
-kubectl exec -it jenkins-kubernetes-7fd748b45b-z5nw5 -- cat /var/jenkins_home/secrets/initialAdminPassword
+kubectl exec -it jenkins-9585d9bb5-b5lnw -- cat /var/jenkins_home/secrets/initialAdminPassword
 
 ## Delete resources
-kubectl delete pvc jenkins-data jenkins-docker-certs
-kubectl delete deployment jenkins-kubernetes
-kubectl delete service jenkins-service
+kubectl delete deployment jenkins
 kubectl delete pv --all
 
 ## Replace jenkins location
@@ -62,4 +60,11 @@ http://localhost:30080 -> http://192.168.127.2:30080
 
 
 ## Quick commands
+### Scale replicas
+kubectl scale deployment jenkins --replicas=0
+
+### Restart
+kubectl rollout restart deployment jenkins
+
+### Git push
 git add . && git commit -m "Update <%DATE% %TIME:~0,8%>" && git push
