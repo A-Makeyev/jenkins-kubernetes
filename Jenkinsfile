@@ -1,58 +1,43 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.12-slim'
-            args '--user root'
-            reuseNode true
-        }
-    }
-
-    options {
-        buildDiscarder(logRotator(
-            artifactNumToKeepStr: '5',
-            numToKeepStr: '5'
-        ))
-    }
+    agent any
 
     environment {
-        DOCKER_HOST = 'tcp://docker-dind:2376'
-        DOCKER_TLS_VERIFY = '1'
-        DOCKER_CERT_PATH = '/certs/client'
+        DOCKER_IMAGE = 'python:3.12-slim'
     }
 
     stages {
-        stage('Install Tools') {
+        stage('Checkout') {
             steps {
-                sh '''
-                    apt-get update
-                    apt-get install -y curl
-                    curl -LsSf https://astral.sh/uv/install.sh | sh
-                    export PATH="$HOME/.cargo/bin:$PATH"
-                    uv venv
-                    . .venv/bin/activate
-                    uv pip install -r requirements.txt pytest pytest-html
-                '''
+                checkout scm
             }
         }
 
-        stage('Run Tests') {
+        stage('Docker Pull') {
             steps {
-                sh '''
-                    . .venv/bin/activate
-                    uv run pytest --html=report.html
-                '''
+                script {
+                    // Pull the Docker image
+                    sh "docker pull ${DOCKER_IMAGE}"
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Build stage here"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Test stage here"
             }
         }
     }
 
     post {
         always {
-            script {
-                archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
-            }
-        }
-        cleanup {
-            script {
+            node {
+                archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
                 deleteDir()
             }
         }
