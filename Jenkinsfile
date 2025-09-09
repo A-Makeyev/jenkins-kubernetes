@@ -41,14 +41,10 @@ pipeline {
 
     post {
         always {
-            node {
-                archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
-            }
+            archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
         }
         cleanup {
-            node {
-                cleanWs()
-            }
+            cleanWs()
         }
     }
 }
