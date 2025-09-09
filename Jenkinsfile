@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python:3.12-slim'
-            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+            args '--user root' // ensures we can run apt-get etc.
             reuseNode true
         }
     }
@@ -14,8 +14,15 @@ pipeline {
         ))
     }
 
+    environment {
+        # Point Docker CLI to the DinD sidecar
+        DOCKER_HOST = 'tcp://docker-dind:2376'
+        DOCKER_TLS_VERIFY = '1'
+        DOCKER_CERT_PATH = '/certs/client'
+    }
+
     stages {
-        stage('Install') {
+        stage('Install Tools') {
             steps {
                 sh '''
                     apt-get update
@@ -29,7 +36,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Run Tests') {
             steps {
                 sh '''
                     . .venv/bin/activate
@@ -41,10 +48,14 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
+            script {
+                archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
+            }
         }
         cleanup {
-            cleanWs()
+            script {
+                deleteDir() // replaces cleanWs()
+            }
         }
     }
 }
