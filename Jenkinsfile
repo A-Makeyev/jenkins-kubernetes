@@ -1,49 +1,30 @@
 pipeline {
     agent {
         docker {
-            image 'python:3.12-slim'
-            args '-v $PWD:/app' // mount workspace inside container
+            image 'python:3.9-slim'
+            args '-u root'
         }
     }
-
-    environment {
-        PYTHONUNBUFFERED = '1'
-    }
-
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-
-        stage('Install dependencies') {
+        stage('Install Dependencies') {
             steps {
-                sh '''
-                    python -m pip install --upgrade pip
-                    pip install -r requirements.txt
-                '''
+                sh 'pip install pytest'
             }
         }
-
         stage('Run Tests') {
             steps {
-                sh 'pytest --maxfail=1 --disable-warnings -v'
+                sh 'pytest --junitxml=report.xml'
             }
         }
     }
-
     post {
         always {
-            archiveArtifacts artifacts: '**/tests/results/*.xml', allowEmptyArchive: true
-            junit '**/tests/results/*.xml'
-            deleteDir()
-        }
-        success {
-            echo 'Tests passed!'
-        }
-        failure {
-            echo 'Tests failed!'
+            junit 'report.xml'
         }
     }
 }
