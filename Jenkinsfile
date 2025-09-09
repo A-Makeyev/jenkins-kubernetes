@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python:3.12-slim'
-            args '--user root' // ensures we can run apt-get etc.
+            args '--user root'
             reuseNode true
         }
     }
@@ -15,7 +15,6 @@ pipeline {
     }
 
     environment {
-        # Point Docker CLI to the DinD sidecar
         DOCKER_HOST = 'tcp://docker-dind:2376'
         DOCKER_TLS_VERIFY = '1'
         DOCKER_CERT_PATH = '/certs/client'
@@ -54,7 +53,7 @@ pipeline {
         }
         cleanup {
             script {
-                deleteDir() // replaces cleanWs()
+                deleteDir()
             }
         }
     }
