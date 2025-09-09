@@ -1,8 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.12-slim'
+            args '-v /var/run/docker.sock:/var/run/docker.sock' // needed for DinD if required
+        }
+    }
 
     environment {
-        DOCKER_IMAGE = 'python:3.12-slim'
+        APP_NAME = 'my-app'
     }
 
     stages {
@@ -12,34 +17,24 @@ pipeline {
             }
         }
 
-        stage('Docker Pull') {
-            steps {
-                script {
-                    // Pull the Docker image
-                    sh "docker pull ${DOCKER_IMAGE}"
-                }
-            }
-        }
-
         stage('Build') {
             steps {
-                echo "Build stage here"
+                sh 'echo Building ${APP_NAME}'
+                sh 'python --version'
             }
         }
 
         stage('Test') {
             steps {
-                echo "Test stage here"
+                sh 'echo Running tests for ${APP_NAME}'
             }
         }
     }
 
     post {
         always {
-            node {
-                archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
-                deleteDir()
-            }
+            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+            deleteDir()
         }
     }
 }
