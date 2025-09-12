@@ -18,6 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
+                    ls -F
                     export PYTHONPATH=src
                     uv run --python .venv pytest --html=report.html
                 '''
