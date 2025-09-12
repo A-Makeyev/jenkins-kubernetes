@@ -5,6 +5,12 @@ pipeline {
             args '-u 0:0'
         }
     }
+    options {
+        buildDiscarder(logRotator(
+            artifactNumToKeepStr: '5',
+            numToKeepStr: '5'
+        ))
+    }
     stages {
         stage('Install') {
             steps {
