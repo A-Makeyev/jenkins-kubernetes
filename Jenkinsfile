@@ -68,15 +68,6 @@ pipeline {
     }
     post {
         always {
-            sh '''
-                cat reports/login/test-results.xml > reports/combined/test-results.xml
-                cat reports/products/test-results.xml >> reports/combined/test-results.xml
-                cat reports/concurrent/test-results.xml >> reports/combined/test-results.xml
-
-                cat reports/login/report.html > reports/combined/report.html
-                cat reports/products/report.html >> reports/combined/report.html
-                cat reports/concurrent/report.html >> reports/combined/report.html
-            '''
             archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
             publishHTML(target: [
                 allowMissing: true,
