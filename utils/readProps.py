@@ -1,11 +1,11 @@
 import os
 import configparser
 
-path = '\\configuration\\config.ini'
-path = '..' + path if 'tests' in os.getcwd() else '.' + path
-config = configparser.RawConfigParser()
-config.read(path)
+base_dir = os.path.dirname(os.path.abspath(__file__))
+config_path = os.path.join(base_dir, '..', 'configuration', 'config.ini')
 
+config = configparser.RawConfigParser()
+config.read(config_path)
 
 class ReadConfig():
     @staticmethod
