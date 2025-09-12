@@ -1,7 +1,6 @@
 pipeline {
     agent {
         docker {
-            //image 'python:3.12-slim'
             image 'selenium/standalone-chrome:latest'
             args '-u 0:0'
         }
@@ -12,7 +11,7 @@ pipeline {
                 sh '''
                     pip install uv
                     uv venv .venv --clear
-                    uv pip install --python .venv -r requirements.txt pytest-html
+                    uv pip install -r requirements.txt pytest-html
                 '''
             }
         }
@@ -22,7 +21,7 @@ pipeline {
                     ls -F
                     export CI=true
                     export PYTHONPATH=src
-                    uv run --python .venv pytest --html=report.html
+                    uv run pytest --html=report.html
                 '''
             }
         }
