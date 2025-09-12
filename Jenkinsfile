@@ -1,7 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'python:3.12-slim'
+            //image 'python:3.12-slim'
+            image 'selenium/standalone-chrome:latest'
             args '-u 0:0'
         }
     }
