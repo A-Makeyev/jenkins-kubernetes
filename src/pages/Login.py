@@ -1,7 +1,9 @@
+from utils.readProps import ReadConfig  
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utils.readProps import ReadConfig  
 
 class LoginPage:
     WINDOW_TITLE = 'Swag Labs'
@@ -15,6 +17,14 @@ class LoginPage:
     def __init__(self, driver):
         self.driver = driver
 
+    def dismiss_alert_if_present(self, driver, timeout=1):
+        try:
+            WebDriverWait(driver, timeout).until(EC.alert_is_present())
+            alert = driver.switch_to.alert
+            alert.dismiss()
+        except TimeoutException:
+            pass
+        
     def wait_for_element(self, by, locator):
         return WebDriverWait(self.driver, 30).until(
             EC.presence_of_element_located((by, locator))

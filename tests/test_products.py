@@ -1,3 +1,4 @@
+import pytest
 from pages.Login import LoginPage
 from pages.Products import ProductsPage
 from utils.logger import CreateLog
@@ -20,6 +21,7 @@ class Test_Products_SauceDemo:
         login_page.enter_password(self.password)
         login_page.press_login_button()
         login_page.assert_login_success()
+        login_page.dismiss_alert_if_present(self.driver)
 
         self.log.info('02. Verify product listing')
         products_page.assert_products_count(6)
