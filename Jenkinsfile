@@ -1,39 +1,48 @@
 pipeline {
-    agent {
-        docker {
-            image 'selenium/standalone-chrome:latest'
-            // Use the host's Jenkins user ID inside the container
-            args '-u $(id -u):$(id -g)'
-        }
-    }
+    // We run the main pipeline on any available agent
+    agent any
     stages {
-        stage('Install Dependencies') {
+        stage('Run Tests in Docker') {
             steps {
-                sh '''
-                # This will now work because the user inside the container
-                # has the same UID as the owner of the workspace directory.
-                python3 -m venv .venv
+                // Use a script block for more advanced logic
+                script {
+                    // Checkout the code first, so it's available for the container
+                    checkout scm
 
-                # Activate the virtual environment and install requirements
-                source .venv/bin/activate
-                pip install -r requirements.txt pytest-html
-                '''
-            }
-        }
-        stage('Test') {
-            steps {
-                sh '''
-                # Activate the virtual environment to use the installed packages
-                source .venv/bin/activate
-                
-                export PYTHONPATH=src
-                pytest --html=report.html
-                '''
+                    // Define the Docker image we want to use
+                    def myImage = docker.image('selenium/standalone-chrome:latest')
+                    
+                    // Get the user ID from the host agent and trim whitespace
+                    def userID = sh(returnStdout: true, script: 'id -u').trim()
+                    def groupID = sh(returnStdout: true, script: 'id -g').trim()
+
+                    // Run the container using the scripted 'inside' syntax
+                    // This allows us to build the arguments dynamically
+                    myImage.inside("-u ${userID}:${groupID}") {
+                        
+                        // --- All commands inside this block run inside the container ---
+
+                        echo "--- Installing Dependencies inside container ---"
+                        sh '''
+                        python3 -m venv .venv
+                        source .venv/bin/activate
+                        pip install -r requirements.txt pytest-html
+                        '''
+
+                        echo "--- Running Tests inside container ---"
+                        sh '''
+                        source .venv/bin/activate
+                        export PYTHONPATH=src
+                        pytest --html=report.html
+                        '''
+                    }
+                }
             }
         }
     }
     post {
         always {
+            // Archive the report generated inside the container
             archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
         }
     }
