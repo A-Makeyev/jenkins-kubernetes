@@ -66,17 +66,36 @@ pipeline {
             }
         }
     }
-    // post {
-    //     always {
-    //         archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
-    //         publishHTML(target: [
-    //             allowMissing: true,
-    //             alwaysLinkToLastBuild: true,
-    //             keepAll: true,
-    //             reportDir: 'reports',
-    //             reportFiles: 'report.html',
-    //             reportName: 'Test Reports'
-    //         ])
-    //     }
-    // }
+    post {
+        always {
+            archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
+
+            publishHTML([ 
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports/login',
+                reportFiles: 'report.html',
+                reportName: 'Login Report'
+            ])
+            
+            publishHTML([ 
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports/products',
+                reportFiles: 'report.html',
+                reportName: 'Products Report'
+            ])
+            
+            publishHTML([ 
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports/concurrent',
+                reportFiles: 'report.html',
+                reportName: 'Concurrent Report'
+            ])
+        }
+    }
 }
