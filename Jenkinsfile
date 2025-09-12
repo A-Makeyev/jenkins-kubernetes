@@ -19,8 +19,6 @@ pipeline {
                     pip install uv
                     uv venv .venv --clear
                     uv pip install -r requirements.txt
-                    export PYTHONPATH=src
-                    export CI=true
                 '''
             }
         }
@@ -29,6 +27,8 @@ pipeline {
                 stage('Login') {
                     steps {
                         sh '''
+                            export CI=true
+                            export PYTHONPATH=src
                             uv run pytest tests/test_login.py \
                                --html=reports/login/report.html \
                                --junitxml=reports/login/test-results.xml \
@@ -40,6 +40,8 @@ pipeline {
                 stage('Products') {
                     steps {
                         sh '''
+                            export CI=true
+                            export PYTHONPATH=src
                             uv run pytest tests/test_products.py \
                                --html=reports/products/report.html \
                                --junitxml=reports/products/test-results.xml \
@@ -51,6 +53,8 @@ pipeline {
                 stage('Concurrent') {
                     steps {
                         sh '''
+                            export CI=true
+                            export PYTHONPATH=src
                             uv run pytest -n 2 \
                                --html=reports/concurrent/report.html \
                                --junitxml=reports/concurrent/test-results.xml \
