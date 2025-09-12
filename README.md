@@ -31,6 +31,14 @@ docker-compose start
 ### Stop jenkins
 docker-compose stop
 
+## Suggested jenkins plugins
+Git
+Docker
+Docker Pipeline
+Pipeline Graph View Plugin
+Pipeline: Stage View Plugin
+Safe Restart
+
 ## Using kubernetes
 ## Installation
 docker build -t jenkins-docker .
