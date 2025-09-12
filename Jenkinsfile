@@ -2,24 +2,31 @@ pipeline {
     agent {
         docker {
             image 'selenium/standalone-chrome:latest'
+            // Keep this for security! It's good practice.
             args '-u 1000:1000'
         }
     }
     stages {
-        stage('Install') {
+        stage('Install Dependencies') { // Renamed for clarity
             steps {
                 sh '''
-                pip install uv
-                uv venv .venv --clear
-                uv pip install --python .venv -r requirements.txt pytest-html
+                # Create a virtual environment in the local workspace directory
+                python3 -m venv .venv
+
+                # Activate the virtual environment and install requirements into it
+                source .venv/bin/activate
+                pip install -r requirements.txt pytest-html
                 '''
             }
         }
         stage('Test') {
             steps {
                 sh '''
+                # Activate the virtual environment to use the installed packages
+                source .venv/bin/activate
+                
                 export PYTHONPATH=src
-                uv run --python .venv pytest --html=report.html
+                pytest --html=report.html
                 '''
             }
         }
