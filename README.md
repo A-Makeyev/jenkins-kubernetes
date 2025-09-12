@@ -12,6 +12,9 @@ uv run pytest
 ### run parallel tests
 uv run pytest -n 4
 
+### run test with reports
+uv run pytest --html=reports/report.html --cov=src --cov-report=html:reports/coverage --junitxml=reports/test-results.xml
+
 ### run a single test
 uv run pytest -v -s tests/test_login.py 
 

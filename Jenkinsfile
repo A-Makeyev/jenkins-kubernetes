@@ -11,9 +11,6 @@ pipeline {
             numToKeepStr: '5'
         ))
     }
-    environment {
-        PYTEST_REPORT = '--html=assets/report.html --cov=src --cov-report=html:assets/coverage --junitxml=assets/test-results.xml'
-    }
     stages {
         stage('Install') {
             steps {
@@ -21,7 +18,7 @@ pipeline {
                     ls -F
                     pip install uv
                     uv venv .venv --clear
-                    uv pip install -r requirements.txt pytest-html pytest-cov pytest-xdist
+                    uv pip install -r requirements.txt
                 '''
             }
         }
@@ -32,8 +29,12 @@ pipeline {
                         sh '''
                             export CI=true
                             export PYTHONPATH=src
-                            mkdir -p assets/login
-                            uv run pytest tests/test_login.py $PYTEST_REPORT
+                            mkdir -p reports/login
+                            uv run pytest tests/test_login.py \
+                               --html=reports/login/report.html \
+                               --junitxml=reports/login/test-results.xml \
+                               --cov=src \
+                               --cov-report=html:reports/login/coverage
                         '''
                     }
                 }
@@ -42,8 +43,12 @@ pipeline {
                         sh '''
                             export CI=true
                             export PYTHONPATH=src
-                            mkdir -p assets/products
-                            uv run pytest tests/test_products.py $PYTEST_REPORT
+                            mkdir -p reports/products
+                            uv run pytest tests/test_products.py \
+                               --html=reports/products/report.html \
+                               --junitxml=reports/products/test-results.xml \
+                               --cov=src \
+                               --cov-report=html:reports/products/coverage
                         '''
                     }
                 }
@@ -52,8 +57,12 @@ pipeline {
                         sh '''
                             export CI=true
                             export PYTHONPATH=src
-                            mkdir -p assets/products
-                            uv run pytest -n 2 $PYTEST_REPORT
+                            mkdir -p reports/concurrent
+                            uv run pytest -n 2 \
+                               --html=reports/concurrent/report.html \
+                               --junitxml=reports/concurrent/test-results.xml \
+                               --cov=src \
+                               --cov-report=html:reports/concurrent/coverage
                         '''
                     }
                 }
@@ -63,18 +72,23 @@ pipeline {
     post {
         always {
             sh '''
-                mkdir -p assets/combined
-                cat assets/login/test-results.xml > assets/combined/test-results.xml
-                cat assets/products/test-results.xml >> assets/combined/test-results.xml
-                cat assets/login/report.html > assets/combined/report.html
-                cat assets/products/report.html >> assets/combined/report.html
+                mkdir -p reports/combined
+                # Combine XML results
+                cat reports/login/test-results.xml > reports/combined/test-results.xml
+                cat reports/products/test-results.xml >> reports/combined/test-results.xml
+                cat reports/concurrent/test-results.xml >> reports/combined/test-results.xml
+
+                # Combine HTML reports (simple concatenation)
+                cat reports/login/report.html > reports/combined/report.html
+                cat reports/products/report.html >> reports/combined/report.html
+                cat reports/concurrent/report.html >> reports/combined/report.html
             '''
-            archiveArtifacts artifacts: 'assets/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
             publishHTML(target: [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
-                reportDir: 'assets/combined',
+                reportDir: 'reports/combined',
                 reportFiles: 'report.html',
                 reportName: 'Combined Test Report'
             ])

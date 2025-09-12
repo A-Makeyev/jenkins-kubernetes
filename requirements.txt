@@ -17,6 +17,7 @@ pluggy
 pycparser
 PySocks
 pytest
+pytest-cov
 pytest-html
 pytest-metadata
 pytest-xdist
