@@ -20,6 +20,7 @@ pipeline {
             steps {
                 sh '''
                     ls -F
+                    export CI=true
                     export PYTHONPATH=src
                     uv run --python .venv pytest --html=report.html
                 '''
