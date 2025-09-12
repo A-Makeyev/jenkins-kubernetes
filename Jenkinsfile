@@ -29,11 +29,7 @@ pipeline {
                         sh '''
                             export CI=true
                             export PYTHONPATH=src
-                            uv run pytest tests/test_login.py \
-                               --html=reports/login/report.html \
-                               --junitxml=reports/login/test-results.xml \
-                               --cov=src \
-                               --cov-report=html:reports/login/coverage
+                            uv run pytest tests/test_login.py 
                         '''
                     }
                 }
@@ -42,11 +38,7 @@ pipeline {
                         sh '''
                             export CI=true
                             export PYTHONPATH=src
-                            uv run pytest tests/test_products.py \
-                               --html=reports/products/report.html \
-                               --junitxml=reports/products/test-results.xml \
-                               --cov=src \
-                               --cov-report=html:reports/products/coverage
+                            uv run pytest tests/test_products.py
                         '''
                     }
                 }
@@ -55,11 +47,7 @@ pipeline {
                         sh '''
                             export CI=true
                             export PYTHONPATH=src
-                            uv run pytest -n 2 \
-                               --html=reports/concurrent/report.html \
-                               --junitxml=reports/concurrent/test-results.xml \
-                               --cov=src \
-                               --cov-report=html:reports/concurrent/coverage
+                            uv run pytest -n 2 --html=reports/report.html --cov=src --cov-report=html:reports/coverage --junitxml=reports/test-results.xml
                         '''
                     }
                 }
