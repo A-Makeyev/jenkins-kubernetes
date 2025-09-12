@@ -9,17 +9,17 @@ pipeline {
         stage('Install') {
             steps {
                 sh '''
-                    python -m venv .venv
-                    . .venv/bin/activate
-                    pip install -r requirements.txt pytest-html
+                    pip install uv
+                    uv venv .venv --clear
+                    uv pip install --python .venv -r requirements.txt pytest-html
                 '''
             }
         }
         stage('Test') {
             steps {
                 sh '''
-                    . .venv/bin/activate
-                    pytest --html=report.html
+                    export PYTHONPATH=src
+                    uv run --python .venv pytest --html=report.html
                 '''
             }
         }
@@ -27,7 +27,6 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
-            echo 'Tests complete'
         }
     }
 }
