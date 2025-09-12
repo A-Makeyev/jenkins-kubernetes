@@ -73,9 +73,9 @@ pipeline {
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
-                reportDir: 'reports/combined',
+                reportDir: 'reports',
                 reportFiles: 'report.html',
-                reportName: 'Combined Test Report'
+                reportName: 'Test Reports'
             ])
         }
     }
