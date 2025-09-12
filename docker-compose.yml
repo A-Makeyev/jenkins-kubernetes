@@ -1,64 +1,44 @@
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: jenkins
-spec:
-  serviceName: jenkins
-  replicas: 2
-  selector:
-    matchLabels:
-      app: jenkins
-  template:
-    metadata:
-      labels:
-        app: jenkins
-    spec:
-      containers:
-      - name: dind
-        image: docker:dind
-        securityContext:
-          privileged: true
-        env:
-        - name: DOCKER_TLS_CERTDIR
-          value: /certs
-        volumeMounts:
-        - name: certs
-          mountPath: /certs/client
-        - name: data
-          mountPath: /var/jenkins_home
-        ports:
-        - containerPort: 2376
-        command: ["--storage-driver", "overlay2"]
-      - name: jenkins
-        image: jenkins-docker
-        env:
-        - name: DOCKER_HOST
-          value: tcp://localhost:2376
-        - name: DOCKER_CERT_PATH
-          value: /certs/client
-        - name: DOCKER_TLS_VERIFY
-          value: "1"
-        volumeMounts:
-        - name: data
-          mountPath: /var/jenkins_home
-        - name: certs
-          mountPath: /certs/client
-          readOnly: true
-        ports:
-        - containerPort: 8080
-        - containerPort: 5000
-  volumeClaimTemplates:
-  - metadata:
-      name: data
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 10Gi
-  - metadata:
-      name: certs
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 1Gi
+services:
+  jenkins-docker:
+    image: docker:dind
+    container_name: jenkins-docker
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    volumes:
+      - jenkins-docker-certs:/certs/client
+      - jenkins-data:/var/jenkins_home
+    ports:
+      - "2376:2376"
+    networks:
+      jenkins:
+        aliases:
+          - docker
+    command: --storage-driver overlay2
+
+  jenkins-docker-example:
+    image: jenkins-docker-example
+    build:
+      context: .
+    container_name: jenkins-docker-example
+    restart: on-failure
+    environment:
+      - DOCKER_HOST=tcp://docker:2376
+      - DOCKER_CERT_PATH=/certs/client
+      - DOCKER_TLS_VERIFY=1
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - jenkins-docker-certs:/certs/client:ro
+    ports:
+      - "8080:8080"
+      - "5000:5000"
+    networks:
+      - jenkins
+
+networks:
+  jenkins:
+    driver: bridge
+
+volumes:
+  jenkins-docker-certs:
+  jenkins-data:

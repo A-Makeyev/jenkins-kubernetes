@@ -16,18 +16,20 @@ uv run pytest -n 4
 uv run pytest -v -s tests/test_login.py 
 
 ## Using Docker
-
 ### Create jenkins image
 docker-compose up -d
+
+### Get password
+pytest-jenkins-kubernetes>docker exec -it jenkins-docker cat /var/jenkins_home/secrets/initialAdminPassword
+
+### Open jenkins
+http://localhost:8080
 
 ### Start jenkins
 docker-compose start
 
 ### Stop jenkins
 docker-compose stop
-
-### Open jenkins
-http://localhost:8080
 
 ## Using kubernetes
 ## Installation
@@ -61,10 +63,10 @@ kubectl scale deployment jenkins --replicas=0
 ### Restart
 kubectl rollout restart deployment jenkins
 
-### Git push
-git add . && git commit -m "Update <%DATE% %TIME:~0,8%>" && git push
-
-
+### Build & Deploy
 docker build -t amakeyev/jenkins-docker:latest .
 docker login
 docker push amakeyev/jenkins-docker:latest
+
+### Git push
+git add . && git commit -m "Update <%DATE% %TIME:~0,8%>" && git push

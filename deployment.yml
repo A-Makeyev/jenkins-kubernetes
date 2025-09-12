@@ -48,6 +48,10 @@ spec:
               mountPath: /var/jenkins_home
             - name: docker-sock
               mountPath: /var/run/docker.sock
+          # The privileged flag is essential to allow the container to access
+          # and execute commands on the host's Docker daemon.
+          securityContext:
+            privileged: true
       volumes:
         - name: jenkins-data
           persistentVolumeClaim:
