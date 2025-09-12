@@ -18,6 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
+                    set PYTHONPATH=src
                     uv run pytest --html=report.html
                 '''
             }
@@ -26,7 +27,6 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
-            echo 'Tests complete'
         }
     }
 }
