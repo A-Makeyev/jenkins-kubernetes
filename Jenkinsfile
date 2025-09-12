@@ -2,18 +2,19 @@ pipeline {
     agent {
         docker {
             image 'selenium/standalone-chrome:latest'
-            // Keep this for security! It's good practice.
-            args '-u 1000:1000'
+            // Use the host's Jenkins user ID inside the container
+            args '-u $(id -u):$(id -g)'
         }
     }
     stages {
-        stage('Install Dependencies') { // Renamed for clarity
+        stage('Install Dependencies') {
             steps {
                 sh '''
-                # Create a virtual environment in the local workspace directory
+                # This will now work because the user inside the container
+                # has the same UID as the owner of the workspace directory.
                 python3 -m venv .venv
 
-                # Activate the virtual environment and install requirements into it
+                # Activate the virtual environment and install requirements
                 source .venv/bin/activate
                 pip install -r requirements.txt pytest-html
                 '''
