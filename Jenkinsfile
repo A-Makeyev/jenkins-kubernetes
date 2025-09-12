@@ -70,31 +70,31 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
 
-            publishHTML([ 
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
+            publishHTML([
                 reportDir: 'reports/login',
                 reportFiles: 'report.html',
-                reportName: 'Login Report'
-            ])
-            
-            publishHTML([ 
+                reportName: 'Login Report',
                 allowMissing: true,
-                alwaysLinkToLastBuild: true,
                 keepAll: true,
+                alwaysLinkToLastBuild: true
+            ])
+
+            publishHTML([
                 reportDir: 'reports/products',
                 reportFiles: 'report.html',
-                reportName: 'Products Report'
-            ])
-            
-            publishHTML([ 
+                reportName: 'Products Report',
                 allowMissing: true,
-                alwaysLinkToLastBuild: true,
                 keepAll: true,
+                alwaysLinkToLastBuild: true
+            ])
+
+            publishHTML([
                 reportDir: 'reports/concurrent',
                 reportFiles: 'report.html',
-                reportName: 'Concurrent Report'
+                reportName: 'Concurrent Report',
+                allowMissing: true,
+                keepAll: true,
+                alwaysLinkToLastBuild: true
             ])
         }
     }
