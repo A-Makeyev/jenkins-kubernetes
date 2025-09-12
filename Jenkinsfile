@@ -2,25 +2,21 @@ pipeline {
     agent {
         docker {
             image 'python:3.12-slim'
-            reuseNode true
+            args '-u 0:0'
         }
     }
     stages {
         stage('Install') {
             steps {
                 sh '''
-                    export HOME=$(pwd)
-                    pip install --user uv pytest-html
-                    export PATH="$HOME/.local/bin:$PATH"
-                    uv sync
+                    pip install uv pytest-html
+                    uv pip install -r requirements.txt
                 '''
             }
         }
         stage('Test') {
             steps {
                 sh '''
-                    export HOME=$(pwd)
-                    export PATH="$HOME/.local/bin:$PATH"
                     uv run pytest --html=report.html
                 '''
             }
