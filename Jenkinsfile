@@ -55,6 +55,8 @@ pipeline {
         }
     }
     post {
+      always {
         archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
+      }  
     }
 }
