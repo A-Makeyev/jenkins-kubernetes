@@ -35,4 +35,3 @@ webdriver-manager
 websocket-client
 websockets
 wsproto
-behave

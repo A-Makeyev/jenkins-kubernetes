@@ -1,0 +1,507 @@
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:18:59 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:19:00 PM: INFO: 02. Enter invalid credentials
+04/06/2025 02:19:00 PM: INFO: 02. Enter invalid credentials
+04/06/2025 02:19:00 PM: INFO: 02. Enter valid credentials
+04/06/2025 02:19:00 PM: INFO: 02. Enter valid credentials
+04/06/2025 02:19:00 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 02:19:00 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 02:19:00 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:19:00 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:19:00 PM: INFO: 03. Submit login and verify success
+04/06/2025 02:19:00 PM: INFO: 03. Submit login and verify success
+04/06/2025 02:19:00 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:19:00 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:19:00 PM: INFO: 02. Verify product listing
+04/06/2025 02:19:00 PM: INFO: 02. Verify product listing
+04/06/2025 02:19:00 PM: INFO: 03. Add product to cart
+04/06/2025 02:19:00 PM: INFO: 03. Add product to cart
+04/06/2025 02:19:01 PM: INFO: 04. Remove product from cart
+04/06/2025 02:19:01 PM: INFO: 04. Remove product from cart
+04/06/2025 02:25:24 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:25:24 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:25:25 PM: INFO: 02. Enter valid credentials
+04/06/2025 02:25:25 PM: INFO: 02. Enter valid credentials
+04/06/2025 02:25:25 PM: INFO: 03. Submit login and verify success
+04/06/2025 02:25:25 PM: INFO: 03. Submit login and verify success
+04/06/2025 02:25:28 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:25:28 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:25:29 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 02:25:29 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 02:25:29 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:25:29 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:25:33 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:25:33 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:25:33 PM: INFO: 02. Enter invalid credentials
+04/06/2025 02:25:33 PM: INFO: 02. Enter invalid credentials
+04/06/2025 02:25:33 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:25:33 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:25:37 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 02:25:37 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 02:25:38 PM: INFO: 02. Verify product listing
+04/06/2025 02:25:38 PM: INFO: 02. Verify product listing
+04/06/2025 02:25:38 PM: INFO: 03. Add product to cart
+04/06/2025 02:25:38 PM: INFO: 03. Add product to cart
+04/06/2025 02:25:38 PM: INFO: 04. Remove product from cart
+04/06/2025 02:25:38 PM: INFO: 04. Remove product from cart
+04/06/2025 02:30:20 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:30:20 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:30:20 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 02:30:20 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 02:30:20 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 02:30:20 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 02:30:21 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:30:21 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:30:21 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:30:21 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 02:30:21 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:30:21 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:30:21 PM: INFO: 02. Enter valid credentials
+04/06/2025 02:30:21 PM: INFO: 02. Enter valid credentials
+04/06/2025 02:30:21 PM: INFO: 02. Enter invalid credentials
+04/06/2025 02:30:21 PM: INFO: 02. Enter invalid credentials
+04/06/2025 02:30:22 PM: INFO: 02. Verify product listing
+04/06/2025 02:30:22 PM: INFO: 02. Verify product listing
+04/06/2025 02:30:22 PM: INFO: 03. Add product to cart
+04/06/2025 02:30:22 PM: INFO: 03. Add product to cart
+04/06/2025 02:30:22 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:30:22 PM: INFO: 03. Submit login and verify error
+04/06/2025 02:30:22 PM: INFO: 04. Remove product from cart
+04/06/2025 02:30:22 PM: INFO: 04. Remove product from cart
+04/06/2025 02:30:23 PM: INFO: 03. Submit login and verify success
+04/06/2025 02:30:23 PM: INFO: 03. Submit login and verify success
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:06:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:06:37 PM: INFO: 02. Enter valid credentials
+04/06/2025 03:06:37 PM: INFO: 02. Enter valid credentials
+04/06/2025 03:06:37 PM: INFO: 03. Submit login and verify success
+04/06/2025 03:06:37 PM: INFO: 03. Submit login and verify success
+04/06/2025 03:06:43 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 03:06:43 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 03:06:43 PM: INFO: 02. Enter invalid credentials
+04/06/2025 03:06:43 PM: INFO: 02. Enter invalid credentials
+04/06/2025 03:06:44 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:06:44 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:06:44 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:06:44 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:06:49 PM: INFO: 02. Verify product listing
+04/06/2025 03:06:49 PM: INFO: 02. Verify product listing
+04/06/2025 03:06:49 PM: INFO: 03. Add product to cart
+04/06/2025 03:06:49 PM: INFO: 03. Add product to cart
+04/06/2025 03:06:49 PM: INFO: 04. Remove product from cart
+04/06/2025 03:06:49 PM: INFO: 04. Remove product from cart
+04/06/2025 03:07:53 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:07:53 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:07:54 PM: INFO: 02. Enter valid credentials
+04/06/2025 03:07:54 PM: INFO: 02. Enter valid credentials
+04/06/2025 03:07:54 PM: INFO: 03. Submit login and verify success
+04/06/2025 03:07:54 PM: INFO: 03. Submit login and verify success
+04/06/2025 03:07:58 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:07:58 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:07:58 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 03:07:58 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 03:07:59 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:07:59 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:08:02 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:08:02 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:08:03 PM: INFO: 02. Enter invalid credentials
+04/06/2025 03:08:03 PM: INFO: 02. Enter invalid credentials
+04/06/2025 03:08:03 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:08:03 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:08:07 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 03:08:07 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 03:08:08 PM: INFO: 02. Verify product listing
+04/06/2025 03:08:08 PM: INFO: 02. Verify product listing
+04/06/2025 03:08:08 PM: INFO: 03. Add product to cart
+04/06/2025 03:08:08 PM: INFO: 03. Add product to cart
+04/06/2025 03:08:08 PM: INFO: 04. Remove product from cart
+04/06/2025 03:08:08 PM: INFO: 04. Remove product from cart
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com and login
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:20:32 PM: INFO: 01. Open https://www.saucedemo.com
+04/06/2025 03:20:55 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 03:20:55 PM: INFO: 02. Enter locked out user credentials
+04/06/2025 03:20:55 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:20:55 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:20:59 PM: INFO: 02. Enter invalid credentials
+04/06/2025 03:20:59 PM: INFO: 02. Enter invalid credentials
+04/06/2025 03:21:00 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:21:00 PM: INFO: 03. Submit login and verify error
+04/06/2025 03:21:01 PM: INFO: 02. Verify product listing
+04/06/2025 03:21:01 PM: INFO: 02. Verify product listing
+04/06/2025 03:21:01 PM: INFO: 03. Add product to cart
+04/06/2025 03:21:01 PM: INFO: 03. Add product to cart
+04/06/2025 03:21:01 PM: INFO: 04. Remove product from cart
+04/06/2025 03:21:01 PM: INFO: 04. Remove product from cart
+04/06/2025 03:21:08 PM: INFO: 02. Enter valid credentials
+04/06/2025 03:21:08 PM: INFO: 02. Enter valid credentials
+04/06/2025 03:21:08 PM: INFO: 03. Submit login and verify success
+04/06/2025 03:21:08 PM: INFO: 03. Submit login and verify success
+09/03/2025 03:45:20 PM: INFO: 01. Open https://www.saucedemo.com
+09/03/2025 03:45:20 PM: INFO: 01. Open https://www.saucedemo.com
+09/03/2025 03:45:21 PM: INFO: 02. Enter valid credentials
+09/03/2025 03:45:21 PM: INFO: 02. Enter valid credentials
+09/03/2025 03:45:21 PM: INFO: 03. Submit login and verify success
+09/03/2025 03:45:21 PM: INFO: 03. Submit login and verify success
+09/03/2025 03:45:25 PM: INFO: 01. Open https://www.saucedemo.com
+09/03/2025 03:45:25 PM: INFO: 01. Open https://www.saucedemo.com
+09/03/2025 03:45:26 PM: INFO: 02. Enter locked out user credentials
+09/03/2025 03:45:26 PM: INFO: 02. Enter locked out user credentials
+09/03/2025 03:45:26 PM: INFO: 03. Submit login and verify error
+09/03/2025 03:45:26 PM: INFO: 03. Submit login and verify error
+09/03/2025 03:45:29 PM: INFO: 01. Open https://www.saucedemo.com
+09/03/2025 03:45:29 PM: INFO: 01. Open https://www.saucedemo.com
+09/03/2025 03:45:30 PM: INFO: 02. Enter invalid credentials
+09/03/2025 03:45:30 PM: INFO: 02. Enter invalid credentials
+09/03/2025 03:45:30 PM: INFO: 03. Submit login and verify error
+09/03/2025 03:45:30 PM: INFO: 03. Submit login and verify error
+09/03/2025 03:45:34 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/03/2025 03:45:34 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/03/2025 03:45:35 PM: INFO: 02. Verify product listing
+09/03/2025 03:45:35 PM: INFO: 02. Verify product listing
+09/03/2025 03:45:35 PM: INFO: 03. Add product to cart
+09/03/2025 03:45:35 PM: INFO: 03. Add product to cart
+09/03/2025 03:45:35 PM: INFO: 04. Remove product from cart
+09/03/2025 03:45:35 PM: INFO: 04. Remove product from cart
+09/06/2025 11:43:55 PM: INFO: 01. Open https://www.saucedemo.com
+09/06/2025 11:43:55 PM: INFO: 01. Open https://www.saucedemo.com
+09/06/2025 11:43:56 PM: INFO: 02. Enter valid credentials
+09/06/2025 11:43:56 PM: INFO: 02. Enter valid credentials
+09/06/2025 11:43:56 PM: INFO: 03. Submit login and verify success
+09/06/2025 11:43:56 PM: INFO: 03. Submit login and verify success
+09/06/2025 11:44:00 PM: INFO: 01. Open https://www.saucedemo.com
+09/06/2025 11:44:00 PM: INFO: 01. Open https://www.saucedemo.com
+09/06/2025 11:44:01 PM: INFO: 02. Enter locked out user credentials
+09/06/2025 11:44:01 PM: INFO: 02. Enter locked out user credentials
+09/06/2025 11:44:01 PM: INFO: 03. Submit login and verify error
+09/06/2025 11:44:01 PM: INFO: 03. Submit login and verify error
+09/06/2025 11:44:05 PM: INFO: 01. Open https://www.saucedemo.com
+09/06/2025 11:44:05 PM: INFO: 01. Open https://www.saucedemo.com
+09/06/2025 11:44:06 PM: INFO: 02. Enter invalid credentials
+09/06/2025 11:44:06 PM: INFO: 02. Enter invalid credentials
+09/06/2025 11:44:06 PM: INFO: 03. Submit login and verify error
+09/06/2025 11:44:06 PM: INFO: 03. Submit login and verify error
+09/06/2025 11:44:10 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/06/2025 11:44:10 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/06/2025 11:44:11 PM: INFO: 02. Verify product listing
+09/06/2025 11:44:11 PM: INFO: 02. Verify product listing
+09/06/2025 11:44:11 PM: INFO: 03. Add product to cart
+09/06/2025 11:44:11 PM: INFO: 03. Add product to cart
+09/06/2025 11:44:11 PM: INFO: 04. Remove product from cart
+09/06/2025 11:44:11 PM: INFO: 04. Remove product from cart
+09/12/2025 02:59:32 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 02:59:32 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 02:59:33 PM: INFO: 02. Enter valid credentials
+09/12/2025 02:59:33 PM: INFO: 02. Enter valid credentials
+09/12/2025 02:59:34 PM: INFO: 03. Submit login and verify success
+09/12/2025 02:59:34 PM: INFO: 03. Submit login and verify success
+09/12/2025 02:59:37 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 02:59:37 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 02:59:38 PM: INFO: 02. Enter locked out user credentials
+09/12/2025 02:59:38 PM: INFO: 02. Enter locked out user credentials
+09/12/2025 02:59:38 PM: INFO: 03. Submit login and verify error
+09/12/2025 02:59:38 PM: INFO: 03. Submit login and verify error
+09/12/2025 02:59:42 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 02:59:42 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 02:59:43 PM: INFO: 02. Enter invalid credentials
+09/12/2025 02:59:43 PM: INFO: 02. Enter invalid credentials
+09/12/2025 02:59:43 PM: INFO: 03. Submit login and verify error
+09/12/2025 02:59:43 PM: INFO: 03. Submit login and verify error
+09/12/2025 02:59:47 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/12/2025 02:59:47 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/12/2025 02:59:48 PM: INFO: 02. Verify product listing
+09/12/2025 02:59:48 PM: INFO: 02. Verify product listing
+09/12/2025 02:59:48 PM: INFO: 03. Add product to cart
+09/12/2025 02:59:48 PM: INFO: 03. Add product to cart
+09/12/2025 02:59:48 PM: INFO: 04. Remove product from cart
+09/12/2025 02:59:48 PM: INFO: 04. Remove product from cart
+09/12/2025 04:18:56 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:18:56 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:18:56 PM: INFO: 02. Enter valid credentials
+09/12/2025 04:18:56 PM: INFO: 02. Enter valid credentials
+09/12/2025 04:18:57 PM: INFO: 03. Submit login and verify success
+09/12/2025 04:18:57 PM: INFO: 03. Submit login and verify success
+09/12/2025 04:19:00 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:00 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:01 PM: INFO: 02. Enter locked out user credentials
+09/12/2025 04:19:01 PM: INFO: 02. Enter locked out user credentials
+09/12/2025 04:19:01 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:01 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:05 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:05 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:06 PM: INFO: 02. Enter invalid credentials
+09/12/2025 04:19:06 PM: INFO: 02. Enter invalid credentials
+09/12/2025 04:19:06 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:06 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:10 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/12/2025 04:19:10 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/12/2025 04:19:11 PM: INFO: 02. Verify product listing
+09/12/2025 04:19:11 PM: INFO: 02. Verify product listing
+09/12/2025 04:19:11 PM: INFO: 03. Add product to cart
+09/12/2025 04:19:11 PM: INFO: 03. Add product to cart
+09/12/2025 04:19:11 PM: INFO: 04. Remove product from cart
+09/12/2025 04:19:11 PM: INFO: 04. Remove product from cart
+09/12/2025 04:19:43 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:43 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:44 PM: INFO: 02. Enter valid credentials
+09/12/2025 04:19:44 PM: INFO: 02. Enter valid credentials
+09/12/2025 04:19:44 PM: INFO: 03. Submit login and verify success
+09/12/2025 04:19:44 PM: INFO: 03. Submit login and verify success
+09/12/2025 04:19:48 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:48 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:48 PM: INFO: 02. Enter locked out user credentials
+09/12/2025 04:19:48 PM: INFO: 02. Enter locked out user credentials
+09/12/2025 04:19:48 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:48 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:52 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:52 PM: INFO: 01. Open https://www.saucedemo.com
+09/12/2025 04:19:53 PM: INFO: 02. Enter invalid credentials
+09/12/2025 04:19:53 PM: INFO: 02. Enter invalid credentials
+09/12/2025 04:19:53 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:53 PM: INFO: 03. Submit login and verify error
+09/12/2025 04:19:57 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/12/2025 04:19:57 PM: INFO: 01. Open https://www.saucedemo.com and login
+09/12/2025 04:19:58 PM: INFO: 02. Verify product listing
+09/12/2025 04:19:58 PM: INFO: 02. Verify product listing
+09/12/2025 04:19:58 PM: INFO: 03. Add product to cart
+09/12/2025 04:19:58 PM: INFO: 03. Add product to cart
+09/12/2025 04:19:58 PM: INFO: 04. Remove product from cart
+09/12/2025 04:19:58 PM: INFO: 04. Remove product from cart
+09/13/2025 12:38:40 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:38:40 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:38:41 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:38:41 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:38:41 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:38:41 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:38:45 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:38:45 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:38:46 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:38:46 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:38:46 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:38:46 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:38:49 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:38:49 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:38:50 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:38:50 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:38:50 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:38:50 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:38:54 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:38:54 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:38:55 AM: INFO: 02. Verify product listing
+09/13/2025 12:38:55 AM: INFO: 02. Verify product listing
+09/13/2025 12:38:55 AM: INFO: 03. Add product to cart
+09/13/2025 12:38:55 AM: INFO: 03. Add product to cart
+09/13/2025 12:38:55 AM: INFO: 04. Remove product from cart
+09/13/2025 12:38:55 AM: INFO: 04. Remove product from cart
+09/13/2025 12:39:47 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:39:47 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:39:47 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:39:47 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:39:48 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:39:48 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:39:48 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:39:48 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:39:48 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:39:48 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:39:48 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:39:48 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:39:48 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:39:48 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:39:49 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:39:49 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:39:49 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:39:49 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:39:49 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:39:49 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:39:49 AM: INFO: 02. Verify product listing
+09/13/2025 12:39:49 AM: INFO: 02. Verify product listing
+09/13/2025 12:39:49 AM: INFO: 03. Add product to cart
+09/13/2025 12:39:49 AM: INFO: 03. Add product to cart
+09/13/2025 12:39:50 AM: INFO: 04. Remove product from cart
+09/13/2025 12:39:50 AM: INFO: 04. Remove product from cart
+09/13/2025 12:44:25 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:44:25 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:44:27 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:44:27 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:44:27 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:44:27 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:44:31 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:44:31 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:44:31 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:44:31 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:44:32 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:44:32 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:44:35 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:44:35 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:44:36 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:44:36 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:44:36 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:44:36 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:44:40 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:44:40 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:48:10 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:48:47 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:48:49 AM: INFO: 02. Verify product listing
+09/13/2025 12:48:49 AM: INFO: 03. Add product to cart
+09/13/2025 12:48:49 AM: INFO: 04. Remove product from cart
+09/13/2025 12:50:45 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:51:08 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:51:11 AM: INFO: 02. Verify product listing
+09/13/2025 12:51:11 AM: INFO: 03. Add product to cart
+09/13/2025 12:54:07 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:54:09 AM: INFO: 02. Verify product listing
+09/13/2025 12:54:09 AM: INFO: 03. Add product to cart
+09/13/2025 12:55:29 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:55:32 AM: INFO: 02. Verify product listing
+09/13/2025 12:55:32 AM: INFO: 03. Add product to cart
+09/13/2025 12:56:48 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:56:50 AM: INFO: 02. Verify product listing
+09/13/2025 12:56:50 AM: INFO: 03. Add product to cart
+09/13/2025 12:56:51 AM: INFO: 04. Remove product from cart
+09/13/2025 12:58:37 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:58:37 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:58:37 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:58:37 AM: INFO: 02. Enter valid credentials
+09/13/2025 12:58:37 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:58:37 AM: INFO: 03. Submit login and verify success
+09/13/2025 12:58:41 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:58:41 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:58:42 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:58:42 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 12:58:42 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:58:42 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:58:46 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:58:46 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 12:58:46 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:58:46 AM: INFO: 02. Enter invalid credentials
+09/13/2025 12:58:46 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:58:46 AM: INFO: 03. Submit login and verify error
+09/13/2025 12:58:50 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:58:50 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 12:58:52 AM: INFO: 02. Verify product listing
+09/13/2025 12:58:52 AM: INFO: 02. Verify product listing
+09/13/2025 12:58:52 AM: INFO: 03. Add product to cart
+09/13/2025 12:58:52 AM: INFO: 03. Add product to cart
+09/13/2025 12:58:52 AM: INFO: 04. Remove product from cart
+09/13/2025 12:58:52 AM: INFO: 04. Remove product from cart
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:05:50 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:05:51 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:05:51 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:05:51 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:05:51 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:05:51 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:05:51 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:05:52 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:05:52 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:05:52 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:05:52 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:05:52 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:05:52 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:05:53 AM: INFO: 02. Verify product listing
+09/13/2025 01:05:53 AM: INFO: 02. Verify product listing
+09/13/2025 01:05:53 AM: INFO: 03. Add product to cart
+09/13/2025 01:05:53 AM: INFO: 03. Add product to cart
+09/13/2025 01:05:53 AM: INFO: 04. Remove product from cart
+09/13/2025 01:05:53 AM: INFO: 04. Remove product from cart
+09/13/2025 01:09:02 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:09:02 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:09:03 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:09:03 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:09:03 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:09:03 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:09:07 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:09:07 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:09:08 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:09:08 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:09:08 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:09:08 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:09:12 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:09:12 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:09:13 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:09:13 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:09:13 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:09:13 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:09:16 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:09:16 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:09:18 AM: INFO: 02. Verify product listing
+09/13/2025 01:09:18 AM: INFO: 02. Verify product listing
+09/13/2025 01:09:18 AM: INFO: 03. Add product to cart
+09/13/2025 01:09:18 AM: INFO: 03. Add product to cart
+09/13/2025 01:09:19 AM: INFO: 04. Remove product from cart
+09/13/2025 01:09:19 AM: INFO: 04. Remove product from cart
+09/13/2025 01:42:00 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:42:00 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:42:00 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:42:00 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:42:00 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:42:00 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:42:04 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:42:04 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:42:05 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:42:05 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:42:05 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:42:05 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:42:09 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:42:09 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:42:09 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:42:09 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:42:09 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:42:09 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:42:13 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:42:13 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:42:15 AM: INFO: 02. Verify product listing
+09/13/2025 01:42:15 AM: INFO: 02. Verify product listing
+09/13/2025 01:42:15 AM: INFO: 03. Add product to cart
+09/13/2025 01:42:15 AM: INFO: 03. Add product to cart
+09/13/2025 01:42:15 AM: INFO: 04. Remove product from cart
+09/13/2025 01:42:15 AM: INFO: 04. Remove product from cart
+09/13/2025 01:43:59 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:43:59 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:44:00 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:44:00 AM: INFO: 02. Enter valid credentials
+09/13/2025 01:44:00 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:44:00 AM: INFO: 03. Submit login and verify success
+09/13/2025 01:44:04 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:44:04 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:44:05 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:44:05 AM: INFO: 02. Enter locked out user credentials
+09/13/2025 01:44:05 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:44:05 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:44:08 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:44:08 AM: INFO: 01. Open https://www.saucedemo.com
+09/13/2025 01:44:09 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:44:09 AM: INFO: 02. Enter invalid credentials
+09/13/2025 01:44:09 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:44:09 AM: INFO: 03. Submit login and verify error
+09/13/2025 01:44:13 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:44:13 AM: INFO: 01. Open https://www.saucedemo.com and login
+09/13/2025 01:44:15 AM: INFO: 02. Verify product listing
+09/13/2025 01:44:15 AM: INFO: 02. Verify product listing
+09/13/2025 01:44:15 AM: INFO: 03. Add product to cart
+09/13/2025 01:44:15 AM: INFO: 03. Add product to cart
+09/13/2025 01:44:15 AM: INFO: 04. Remove product from cart
+09/13/2025 01:44:15 AM: INFO: 04. Remove product from cart

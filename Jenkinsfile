@@ -22,19 +22,39 @@ pipeline {
                 '''
             }
         }
-        stage('Login') {
-            steps {
-                sh '''
-                    export CI=true
-                    export PYTHONPATH=src
-                    behave features/login.feature
-                '''
+        stage('Tests') {
+            parallel {
+                stage('Login') {
+                    steps {
+                        sh '''
+                            export CI=true
+                            export PYTHONPATH=src
+                            uv run pytest tests/test_login.py 
+                        '''
+                    }
+                }
+                stage('Products') {
+                    steps {
+                        sh '''
+                            export CI=true
+                            export PYTHONPATH=src
+                            uv run pytest tests/test_products.py
+                        '''
+                    }
+                }
+                stage('Concurrent') {
+                    steps {
+                        sh '''
+                            export CI=true
+                            export PYTHONPATH=src
+                            uv run pytest -n 2 --html=reports/report.html --cov=src --cov-report=html:reports/coverage --junitxml=reports/test-results.xml
+                        '''
+                    }
+                }
             }
         }
     }
     post {
-        always {
-            archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
-        }
+        archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
     }
 }
